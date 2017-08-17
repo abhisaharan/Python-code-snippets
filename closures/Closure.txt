@@ -1,0 +1,15 @@
+Closures: A closure is an inner function that remembers and it has access to variables in local scope it was created even after the outer function has finished executing.
+The criteria that must be met to create closure in Python are summarized in the following points.
+•	We must have a nested function (function inside a function).
+•	The nested function must refer to a value defined in the enclosing function.
+•	The enclosing function must return the nested function.
+•	def outer_func(message):
+
+    def inner_func(msg):
+        print(message)
+        print(msg)
+    return inner_func
+a = outer_func("hii")
+a("hi")  #a is inner_func. You can check by inner_func.__name__
+a("hello")
+
