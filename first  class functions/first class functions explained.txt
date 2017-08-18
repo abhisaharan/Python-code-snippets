@@ -1,0 +1,1 @@
+Is an entity which supports all the operations generally available to other entities. These operation typically include being passes as an argument, returned from a function and assigned to a variable.
