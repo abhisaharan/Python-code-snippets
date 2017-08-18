@@ -8,7 +8,7 @@ The criteria that must be met to create closure in Python are summarized in the 
     def inner_func(msg):
         print(message)
         print(msg)
-    return inner_func
+    return inner_func   # notice* that i have used "inner_func" not inner_funnc()". There is a difference the later is executing function and "inner_func" means that it is 					just waiting to get executed. 
 a = outer_func("hii")
 a("hi")  #a is inner_func. You can check by inner_func.__name__
 a("hello")

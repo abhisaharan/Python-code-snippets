@@ -1,0 +1,2 @@
+Decorators: A function that takes another function as a argument, adds some kind of functionality and returns another function. All of this without altering the source code of original function you passed in. 
+
