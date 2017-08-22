@@ -1,9 +1,9 @@
-def fib(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
+from test1.test2.test3 import concat
 
-print(fib(10))
+
+print(concat.concat_str('Python'))
+
+person1 = concat.Person("john", 23)
+#print(person1)
+
+concat.kirupasir()
