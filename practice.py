@@ -1,3 +1,3 @@
-import AbhishekSaharan_assignment1
-
-print(AbhishekSaharan_assignment1.even_numbers([2,3,4,56]))
+print (bin(1))
+for n in range(1,6):
+    print(bin(n))
