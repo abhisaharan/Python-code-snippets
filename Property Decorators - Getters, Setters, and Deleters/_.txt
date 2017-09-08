@@ -1,0 +1,2 @@
+The property decorator allows us to define Class methods that we can access like attributes.
+This allows us to implement getters, setters, and deleters. - cory schafer
