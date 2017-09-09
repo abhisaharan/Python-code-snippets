@@ -1,0 +1,83 @@
+Python:
+
+-> 	If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better 	off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a script.
+
+-> 	with the __name__ set to "__main__". That means that by adding this code at the end of your module:
+
+	if __name__ == "__main__":
+   	 import sys
+   	 fib(int(sys.argv[1]))
+
+	you can make the file usable as a script as well as an importable module, because the code that parses the command line only runs if the module is executed as the “main” file:
+
+->	List Comprehension: are a powerful way to generate lists using the for/in and if keywords we've learned.
+
+->	You may have noticed in our example back in the first exercise that we started our class definition off with an odd-looking function: __init__(). This function is required for classes, and it's used to initialize the objects it creates. __init__() always takes at least one argument, self, that refers to the object being created. You can think of __init__() as the function that "boots up" each object the class creates.So far, __init__() only takes one parameter: self. This is a Python convention; there's nothing magic about the word self. However, it's overwhelmingly common to use self as the first parameter in __init__(), so you should do this so that other people will understand your code.
+
+The part that is magic is the fact that self is the first parameter passed to __init__(). Python will use the first parameter that __init__() receives to refer to the object being created; this is why it's often called self, since this parameter gives the object being created its identity.
+
+More on __init__() and self
+
+Now that you're starting to understand how classes and objects work, it's worth delving a bit more into __init__() and self. They can be confusing!
+
+As mentioned, you can think of __init__() as the method that "boots up" a class' instance object: the init bit is short for "initialize."
+
+The first argument __init__() gets is used to refer to the instance object, and by convention, that argument is called self. If you add additional arguments—for instance, a name and age for your animal—setting each of those equal to self.name and self.age in the body of __init__() will make it so that when you create an instance object of your Animal class, you need to give each instance a name and an age, and those will be associated with the particular instance you create.
+
+
+# Class definition
+class Animal(object):
+  """Makes cute animals."""
+  # For initializing our instance objects
+  def __init__(self, name, age, is_hungry):
+    self.name = name
+    self.age = age
+    self.is_hungry = is_hungry
+
+# Note that self is only used in the __init__()
+# function definition; we don't need to pass it
+# to our instance objects.
+
+zebra = Animal("Jeffrey", 2, True)
+giraffe = Animal("Bruce", 1, False)
+panda = Animal("Chad", 7, True)
+
+print zebra.name, zebra.age, zebra.is_hungry
+print giraffe.name, giraffe.age, giraffe.is_hungry
+print panda.name, panda.age, panda.is_hungry
+
+
+->	Class basics
+
+Classes can be very useful for storing complicated objects with their own methods and variables. Defining a class is much like defining a function, but we use the class keyword instead. We also use the word object in parentheses because we want our classes to inherit the object class. This means that our class has all the properties of an object, which is the simplest, most basic class. Later we'll see that classes can inherit other, more complicated classes. 
+
+
+
+*****------------------*************important
+->	File Input/Output
+PSA: Buffering Data
+
+We keep telling you that you always need to close your files after you're done writing to them. Here's why!
+
+During the I/O process, data is buffered: this means that it is held in a temporary location before being written to the file.
+
+Python doesn't flush the buffer—that is, write data to the file—until it's sure you're done writing. One way to do this is to close the file. If you write to a file without closing, the data won't make it to the target file.
+
+The 'with' and 'as' Keywords
+
+Programming is all about getting the computer to do the work. Is there a way to get Python to automatically close our files for us?
+
+Of course there is. This is Python.
+
+You may not know this, but file objects contain a special pair of built-in methods: __enter__() and __exit__(). The details aren't important, but what is important is that when a file object's __exit__() method is invoked, it automatically closes the file. How do we invoke this method? With with and as.
+
+The syntax looks like this:
+
+with open("file", "mode") as variable:
+  # Read or write to the file
+
+*******_____________________***************impt
+
+To find MRO(method resolution order) in class inheritance cases. Just type "Print(help(name_of_class))" you will have all the very helpful details about that class.
+
+
