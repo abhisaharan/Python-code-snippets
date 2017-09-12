@@ -1,0 +1,2 @@
+Class methods are methods that automatically take the class as the first argument. Class methods can also be used as alternative constructors. Static methods do not take the instance or the class as the first argument. They behave just like normal functions, yet they should have some logical connection to our class.
+Regular instance methods are just regular with "self" as a first parameter.

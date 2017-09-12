@@ -1,0 +1,1 @@
+specific ways and also look at the control flow of a try/except/else/finally statement. Understanding how to properly handle errors will provide us with the tools to make better software in the future.
