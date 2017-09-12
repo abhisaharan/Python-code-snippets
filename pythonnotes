@@ -81,3 +81,17 @@ with open("file", "mode") as variable:
 To find MRO(method resolution order) in class inheritance cases. Just type "Print(help(name_of_class))" you will have all the very helpful details about that class.
 
 
+->  You can apply the list as separate arguments:
+
+print(*L)
+
+and let print() take care of converting each element to a string. You can, as always, control the separator by setting the sep keyword argument:
+
+>>> L = [1, 2, 3, 4, 5]
+>>> print(*L)
+1 2 3 4 5
+>>> print(*L, sep=', ')
+1, 2, 3, 4, 5
+>>> print(*L, sep=' -> ')
+1 -> 2 -> 3 -> 4 -> 5
+
