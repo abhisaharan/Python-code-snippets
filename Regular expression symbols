@@ -1,3 +1,5 @@
+regex101.com
+
 Identifiers:
 
 \d any number
@@ -19,7 +21,7 @@ Modifiers:
 $ Match the end of a string
 ^ matching the beginning of a string
 | either or
-[] range or "variance"
+[] range or "variance" # if the data in only "[]" then by default it selects one
 {X} expecting "X" amount
 
 White Space Characters:
@@ -33,3 +35,77 @@ White Space Characters:
 Don't Forget:
 
 . + * ? [] $ ^ () {} | \
+
+Important functions:
+re.findall(): re.findall(r'\w','http://www.hackerrank.com/')
+['h', 't', 't', 'p', 'w', 'w', 'w', 'h', 'a', 'c', 'k', 'e', 'r', 'r', 'a', 'n', 'k', 'c', 'o', 'm']
+
+re.search(): expression scans through a string looking for the first location where the regex pattern produces a match.
+>>>print bool(re.search(r"ly","similarly"))
+True
+
+re.match(): expression only matches at the beginning of the string.
+>>> print bool(re.match(r"ly","similarly"))
+False
+>>> print bool(re.match(r"ly","ly should be in the beginning"))
+True
+
+re.split(): The re.split() expression splits the string by occurrence of a pattern.
+>> re.split("-","+91-011-2711-1111")
+['+91', '011', '2711', '1111']
+
+
+group()
+A group() expression returns one or more subgroups of the match.
+
+
+groups()
+A groups() expression returns a tuple containing all the subgroups of the match.
+>>> m = re.match(r'(\w+)@(\w+)\.(\w+)','username@hackerrank.com')
+>>> m.groups()
+('username', 'hackerrank', 'com')
+
+groupdict()
+A groupdict() expression returns a dictionary containing all the named subgroups of the match, keyed by the subgroup name.
+
+re.findall()
+The expression re.findall() returns all the non-overlapping matches of patterns in a string as a list of strings.
+>>> re.findall(r'\w','http://www.hackerrank.com/')
+['h', 't', 't', 'p', 'w', 'w', 'w', 'h', 'a', 'c', 'k', 'e', 'r', 'r', 'a', 'n', 'k', 'c', 'o', 'm']
+
+
+([a-zA-Z0-9])\1+
+1st Capturing Group ([a-zA-Z0-9])
+Match a single character present in the list below [a-zA-Z0-9]
+a-z a single character in the range between a (index 97) and z (index 122) (case sensitive)
+A-Z a single character in the range between A (index 65) and Z (index 90) (case sensitive)
+0-9 a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
+\1+
+matches the same text as most recently matched by the 1st capturing group
+
+****************
+(?=...)
+
+Matches if ... matches next, but doesn’t consume any of the string.
+This is called a lookahead assertion. For example, Isaac (?=Asimov)
+ will match 'Isaac ' only if it’s followed by 'Asimov'.
+
+(?<=...)
+
+Matches if the current position in the string is preceded by a match
+for ... that ends at the current position. This is called a positive
+lookbehind assertion. (?<=abc)def will find a match in abcdef, since
+the lookbehind will back up 3 characters and check if the contained
+pattern matches.
+
+lookahead and negative lookbehind ex:
+import re
+consonants = 'qwrtypsdfghjklzxcvbnm'
+vowels = 'aeiou'
+match = re.findall(r'(?<=['+consonants+'])(['+vowels+']{2,})(?=['+consonants+'])',raw_input(),flags = re.I)
+if match:
+    for i in match:
+        print i
+else:
+    print -1
+*******************
