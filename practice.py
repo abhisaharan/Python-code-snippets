@@ -1,11 +1,13 @@
+#!/bin/python3
+
+import sys
 import re
 
 
-def fun(s):
+n = int(input().strip())
+binary_form = bin(n)
+n_of_1 = 0
+a = re.findall(r'[1]{1,}', binary_form)
+print(a)
 
-    a = re.search(r'([\w]+)@([a-zA-Z0-9]+)\.([\w]{1,3})$', s)
-
-
-    a = re.match(r'[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{1,3}$',s)
-    return(a)
-    a = re.search(r'([\w]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{1,3})$', s)
+#print(n_of_1)
