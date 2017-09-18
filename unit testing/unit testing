@@ -1,0 +1,50 @@
+Steps for unittesting:
+
+-> First we create a new module. Ex: text_calc.py. Naming convention for tests is to start
+    name with "test" keyword.
+-> Import unittest module
+    also import the module you want to test, in this case import calc
+-> Now create some test cases for the functions that we want to test. In order to create
+    those test cases, first we need to create a test class that inherits from unittest.testcase
+    ex: class TestCalc(unittest.TestCase)
+    Now inheriting from unittest.Testcase will give us access to a lot of different testing
+    capabilities within that class
+-> Now writes methods inside the class. Now the naming convention is required here.
+   so that we know which method represents tests. So if method dont start with "test", it
+   wont be run. ex: def test_whatever_we_are_testing(self):
+
+-> we inherited from the Testcase. so now we have access to various methods we gonna use
+    like assertEqual().
+
+-> to run unit test:
+    we need to run unittest as our main module and pass in test_calc.py
+    ex: in console type: python -m unittest test_calc.py
+    we can also run it directly like "python test_calc.py" if we include:
+        if __name__ == "__main__":
+            unittest.main()
+
+-> Inside class "def setUp(self):" will run its code before every single test. To make code
+    DRY(Do not repeat yourslef). Remember to use "self.instance_name" after using this in your code
+
+    "def tearDown(self):" will run its code after every single test. use case: to remove data used in test case.
+
+
+-> two class methods helpful that run once in beginning and once after everything is done.
+    @classmethod
+    def setUpClass(cls): "run in beginning"
+
+    @classmethod
+    def tearDownClass(cls): "runs in the end"
+
+
+
+
+-> concept called "mock and patch". from unittest.mock import patch. we can use patch as a
+    decorator or context manager. Use case for mock and patch: if our test is dependent on
+    data from online website and for some reasons that website is not working. Then we will
+    "mock" the data from website and use patch
+
+-> test driven development: you write the test before you write thee code. Think about what you
+    want your code to do and then write a test implementing that behaviour then watch the
+    test fail since it doesnt actually have any code to run against. Then write a code in a
+    way that gets the test to pass
