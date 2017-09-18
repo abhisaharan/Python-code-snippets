@@ -1,13 +1,11 @@
-#!/bin/python3
+def fib(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        temp = b
+        b = a+b
+        a = temp
+        #a, b = b, a+b
+        print(a)
 
-import sys
-import re
-
-
-n = int(input().strip())
-binary_form = bin(n)
-n_of_1 = 0
-a = re.findall(r'[1]{1,}', binary_form)
-print(a)
-
-#print(n_of_1)
+print(fib(10))
