@@ -83,7 +83,7 @@ A-Z a single character in the range between A (index 65) and Z (index 90) (case 
 \1+
 matches the same text as most recently matched by the 1st capturing group
 
-****************
+******************
 (?=...)
 
 Matches if ... matches next, but doesn’t consume any of the string.
