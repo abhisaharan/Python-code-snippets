@@ -8,4 +8,4 @@ def fib(n):
         #a, b = b, a+b
         print(a)
 
-print(fib(10))
+print(fib(10))mm
