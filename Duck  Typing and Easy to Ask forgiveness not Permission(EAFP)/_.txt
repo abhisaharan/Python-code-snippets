@@ -1,2 +1,4 @@
-If you've never heard the term Pythonic before, basically it means that you are following conventions and coding styles of the Python language in order to write clean and readable code.
-->Duck Typing: If it walks like a duck and quacks like a duck then its a duck: We dont care what type of object we are working with, we only care if our object can do what we ask it to do.
+If you've never heard the term Pythonic before, basically it means that you are following conventions and coding styles of the Python
+ language in order to write clean and readable code.
+->Duck Typing: If it walks like a duck and quacks like a duck then its a duck: We dont care what type of object we are working with,
+we only care if our object can do what we ask it to do.
