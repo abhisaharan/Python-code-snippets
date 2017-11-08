@@ -1,2 +1,3 @@
-import random
-print(random.random)
+if __name__ == '__main__':
+    s = input()
+    print(s.isal)
