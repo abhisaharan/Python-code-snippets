@@ -1,7 +1,5 @@
-if __name__ == '__main__':
-    s = input()
-    print(any([n.isalnum() for n in s]))
-    print(any([n.isalpha() for n in s]))
-    print(any([n.isdigit() for n in s]))
-    print(any([n.islower() for n in s]))
-    print(any([n.isupper() for n in s]))
+for i in range(1,11,2):
+    print("-")
+print("|")
+for i in range(33-2,-1,-2):
+    print(".")
