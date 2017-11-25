@@ -1,5 +1,11 @@
-for i in range(1,11,2):
-    print("-")
-print("|")
-for i in range(33-2,-1,-2):
-    print(".")
+def capitalize(string):
+    a = string.split(" ")
+    new_list = []
+    for w in a:
+        if len(w) == 1:
+            a = new_list.append(w[0])
+        else:
+            a = new_list.append(w[0].capitalize()+w[1:])
+    return (" ".join(new_list))
+
+
