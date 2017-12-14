@@ -1,15 +1,5 @@
-first = int(input())
-a = input()
-b = a.split()
-newlis1 = list(map(int, b))
-second = int(input())
-c = input()
-d = c.split()
-newlis2 = list(map(int, d))
+Nu = [input().split() for i in range(int(input()))]
+Cu = [input().split() for i in range(int(input()))]
 
-newlis1 = set(newlis1)
-newlis2 = set(newlis2)
-e = newlis1.symmetric_difference(newlis2)
-e = sorted(e)
-for n in e:
-    print(n)
+
+print(Nu, Cu)
