@@ -1,10 +1,9 @@
 subject, student = map(int, input().split())
 marks = []
 for i in range(student):
-        marks.append(input().split())
+        marks.append([map(float, input().split())])
 
-su = 0
-for i in marks:
-    sum += marks[i]
+print(zip(marks))
+for i in zip(*marks):
+    print( sum(i)/len(i) )
 
-print(su)
