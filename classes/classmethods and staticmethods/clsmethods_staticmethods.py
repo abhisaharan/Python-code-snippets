@@ -1,3 +1,10 @@
+# classmethod: class is passed as a first argument. It is also called alternative constructor
+# i.e "def __init__()" is default constructor but with class method we can contruct an object
+#with new ways  basically adding more functionality to object creation
+
+#https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3
+
+
 class Employee:
 
     num_of_emps = 0
@@ -22,9 +29,10 @@ class Employee:
         cls.raise_amt = amount
 
     @classmethod
-    def from_string(cls, emp_str):
+    def from_string(cls, emp_str):      #class method starts with "from" keyword
         first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
+        return cls(first, last, pay)    # this means Employee(first, last, pay). we just added functionality
+                                        # to object creation using function from_string and parsed string '-' and passed as a argument
 
     @staticmethod
     def is_workday(day):
