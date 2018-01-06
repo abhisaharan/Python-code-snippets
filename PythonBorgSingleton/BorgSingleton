@@ -34,7 +34,10 @@ When running this module as a main script, the output is:
 Example(Lara) Example(Lara)
 Example(Boris) Example(Boris) Example(Boris)
 Example(Marcel) Example(Marcel) Example(Marcel)
-All instances of Example share state, so any setting of the name attribute of any instance, either in _ _init_ _ or directly, affects all instances equally. However, note that their id differs, so since we have not defined _ _eq_ _ and _ _hash_ _, they are distinct keys in a dictionary. Thus, if we continued our sample code as follows:
+All instances of Example share state, so any setting of the name attribute of any instance, either in _ _init_ _ or
+directly, affects all instances equally. However, note that their id differs, so since we have not
+defined _ _eq_ _ and _ _hash_ _, they are distinct keys in a dictionary. Thus, if we continued our
+sample code as follows:
 
     adict = {}
     j = 0
@@ -49,7 +52,8 @@ the output would be:
 Example(Marcel) 0
 Example(Marcel) 1
 Example(Marcel) 2
-If that’s not what you want, you can add _ _eq_ _ and _ _hash_ _ to the Example class or the Borg class. For example, here are these special methods added to Borg:
+If that’s not what you want, you can add _ _eq_ _ and _ _hash_ _ to the Example class or the Borg class. For example,
+ here are these special methods added to Borg:
 
 class Borg:
     _shared_state = {}
