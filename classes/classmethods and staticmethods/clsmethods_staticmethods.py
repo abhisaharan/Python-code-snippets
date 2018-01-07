@@ -34,13 +34,16 @@ class Employee:
         return cls(first, last, pay)    # this means Employee(first, last, pay). we just added functionality
                                         # to object creation using function from_string and parsed string '-' and passed as a argument
 
+
+# static method: they behave like regular methods except they have some logical connection with class
+    #Ex below: is_workday is logically connected to Employee class but it doesnt depends on specific instance or class variable
     @staticmethod
     def is_workday(day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
-
-
+# the method should be static method if we dont have access the class or instance anywhere in
+#in function
 emp_1 = Employee('Corey', 'Schafer', 50000)
 emp_2 = Employee('Test', 'Employee', 60000)
 
