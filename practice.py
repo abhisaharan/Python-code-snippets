@@ -1,29 +1,4 @@
+import logging
 import time
-from random import randint
-import threading
-
-queue = []
-
-
-def produce():
-    for i in range(0, 5):
-        time.sleep(1)
-        queue.append(randint(0, 9))
-
-
-def consume():
-    while True:
-        if len(queue) > 0:
-            print(queue.pop())
-
-
-if "__name__" == "__main__":
-    p = threading.Thread(target=produce)
-    c = threading.Thread(target=consume)
-
-    p.start()
-    c.start()
-
-    p.join()
-    c.join()
-
+logging.basicConfig(filename='test2', level=logging.debug(),
+                    format = '%(asctime)s:%(levelname)s:%(message)s')
